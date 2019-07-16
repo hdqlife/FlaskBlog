@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="article">
+  <database-model serializer="dbm" rdbms="SQLITE" format-version="4.4">
+    <root id="1"/>
+    <schema id="2" parent="1" name="main">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <collation id="3" parent="1" name="BINARY"/>
+    <collation id="4" parent="1" name="NOCASE"/>
+    <collation id="5" parent="1" name="RTRIM"/>
+    <table id="6" parent="2" name="article"/>
+    <table id="7" parent="2" name="author"/>
+    <table id="8" parent="2" name="comment"/>
+    <table id="9" parent="2" name="registrations"/>
+    <table id="10" parent="2" name="sqlite_master">
+      <System>1</System>
+    </table>
+    <table id="11" parent="2" name="type"/>
+    <column id="12" parent="6" name="id">
+      <DataType>INTEGER|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="13" parent="6" name="title">
+      <Position>1</Position>
+      <DataType>VARCHAR(32)|0</DataType>
+    </column>
+    <column id="14" parent="6" name="description">
+      <Position>2</Position>
+      <DataType>TEXT|0</DataType>
+    </column>
+    <column id="15" parent="6" name="content">
+      <Position>3</Position>
+      <DataType>TEXT|0</DataType>
+    </column>
+    <column id="16" parent="6" name="time">
+      <Position>4</Position>
+      <DataType>DATE|0</DataType>
+    </column>
+    <column id="17" parent="6" name="click">
+      <Position>5</Position>
+      <DataType>INTEGER|0</DataType>
+    </column>
+    <column id="18" parent="6" name="recommend">
+      <Position>6</Position>
+      <DataType>INTEGER|0</DataType>
+    </column>
+    <column id="19" parent="6" name="picture">
+      <Position>7</Position>
+      <DataType>VARCHAR(32)|0</DataType>
+    </column>
+    <column id="20" parent="6" name="author">
+      <Position>8</Position>
+      <DataType>VARCHAR(32)|0</DataType>
+    </column>
+    <key id="21" parent="6">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="22" parent="6">
+      <ColNames>author</ColNames>
+      <RefTableName>author</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="23" parent="7" name="id">
+      <DataType>INTEGER|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="7" name="name">
+      <Position>1</Position>
+      <DataType>VARCHAR(32)|0</DataType>
+    </column>
+    <column id="25" parent="7" name="age">
+      <Position>2</Position>
+      <DataType>VARCHAR(32)|0</DataType>
+    </column>
+    <column id="26" parent="7" name="email">
+      <Position>3</Position>
+      <DataType>VARCHAR(32)|0</DataType>
+    </column>
+    <column id="27" parent="7" name="photo">
+      <Position>4</Position>
+      <DataType>VARCHAR(32)|0</DataType>
+    </column>
+    <key id="28" parent="7">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="29" parent="8" name="id">
+      <DataType>INTEGER|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="30" parent="8" name="comtent">
+      <Position>1</Position>
+      <DataType>TEXT|0</DataType>
+    </column>
+    <column id="31" parent="8" name="time">
+      <Position>2</Position>
+      <DataType>DATETIME|0</DataType>
+    </column>
+    <column id="32" parent="8" name="persion">
+      <Position>3</Position>
+      <DataType>VARCHAR(32)|0</DataType>
+    </column>
+    <column id="33" parent="8" name="article">
+      <Position>4</Position>
+      <DataType>INTEGER|0</DataType>
+    </column>
+    <key id="34" parent="8">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="35" parent="8">
+      <ColNames>article</ColNames>
+      <RefTableName>article</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="36" parent="9" name="type_id">
+      <DataType>INTEGER|0</DataType>
+    </column>
+    <column id="37" parent="9" name="article_id">
+      <Position>1</Position>
+      <DataType>INTEGER|0</DataType>
+    </column>
+    <foreign-key id="38" parent="9">
+      <ColNames>type_id</ColNames>
+      <RefTableName>type</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <foreign-key id="39" parent="9">
+      <ColNames>article_id</ColNames>
+      <RefTableName>article</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="40" parent="10" name="type">
+      <DataType>text|0</DataType>
+    </column>
+    <column id="41" parent="10" name="name">
+      <Position>1</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="42" parent="10" name="tbl_name">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="43" parent="10" name="rootpage">
+      <Position>3</Position>
+      <DataType>int|0</DataType>
+    </column>
+    <column id="44" parent="10" name="sql">
+      <Position>4</Position>
+      <DataType>text|0</DataType>
+    </column>
+    <column id="45" parent="11" name="id">
+      <DataType>INTEGER|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="46" parent="11" name="lable">
+      <Position>1</Position>
+      <DataType>VARCHAR(32)|0</DataType>
+    </column>
+    <column id="47" parent="11" name="description">
+      <Position>2</Position>
+      <DataType>TEXT|0</DataType>
+    </column>
+    <key id="48" parent="11">
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
